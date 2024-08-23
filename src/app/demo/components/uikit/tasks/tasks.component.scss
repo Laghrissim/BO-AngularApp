@@ -1,0 +1,51 @@
+.list-item{
+    margin:1.5rem;
+    border: 2px solid black; /* Adjust the width, style, and color as needed */
+    padding: 16px; /* Optional: Add padding inside the container */
+    border-radius: 4px;
+    cursor:pointer;
+}
+.p-card {
+    background-color: rgba(0, 0, 0, 5) !important;
+   }
+p-card {
+    background-color: rgba(0, 0, 0, 5) !important;
+   }
+.click{
+    cursor:pointer;
+}
+.subscriber-chip {
+    position: relative;
+    cursor: pointer;
+}
+
+.subscriber-chip::after {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.subscriber-chip:hover::after {
+    display: block;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+}
+.list{
+    ng-container{
+        background-color: rgba(0, 0, 0, 0.025) !important;
+
+    }
+
+}
+.col{
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}

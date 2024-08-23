@@ -1,0 +1,234 @@
+.cm-breadcrumb {
+    width: 60%;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+.chat_window {
+    width: 50%;
+    height: 50%;
+}
+
+.top_menu {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px 0 15px;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+}
+
+.top_menu .buttons {
+    margin: 3px 0 0 20px;
+    position: absolute;
+}
+
+.top_menu .buttons .button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+
+.top_menu .buttons .button.close {
+    background-color: #f5886e;
+}
+
+.top_menu .buttons .button.minimize {
+    background-color: #fdbf68;
+    cursor: pointer;
+}
+
+.top_menu .buttons .button.maximize {
+    background-color: #a3d063;
+    cursor: pointer;
+}
+
+.top_menu .title {
+    text-align: center;
+    color: #bcbdc0;
+    font-size: 20px;
+}
+
+.messages {
+    position: relative;
+    list-style: none;
+    padding: 20px 10px 0 10px;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 40rem;
+}
+
+.messages .message {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.5s linear;
+    opacity: 1;
+}
+
+.messages .message.left .avatar {
+    background-color: #eaf3ff;
+    float: left;
+}
+
+.messages .message.left .text_wrapper {
+    background-color: #eaf3ff;
+    margin-left: 20px;
+}
+
+.messages .message.left .text_wrapper::after,
+.messages .message.left .text_wrapper::before {
+    right: 100%;
+    border-right-color: #eaf3ff;
+}
+
+.messages .message.left .text {
+    color: #141340;
+}
+
+.messages .message.right .avatar {
+    background-color: #bde3ff75;
+    float: right;
+}
+
+.messages .message.right .text_wrapper {
+    background-color: #bde3ff75;
+    margin-right: 20px;
+    float: right;
+    //text-align: right;
+}
+
+.messages .message.right .text_wrapper::after,
+.messages .message.right .text_wrapper::before {
+    left: 100%;
+    border-left-color: #bde3ff75;
+}
+
+.messages .message.right .text {
+    color: #141340;
+}
+
+.messages .message.appeared {
+    opacity: 1;
+}
+
+.messages .message .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        /* Ensures that the image does not exceed the circular div's bounds */
+        margin-top: 25%;
+        margin-left: 26%;
+    }
+}
+
+.messages .message .text_wrapper {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 8px;
+    //width: calc(100% - 220px);
+    min-width: clamp(10rem, 20vw, 20rem);
+    max-width: clamp(10rem, 45vw, 45rem);
+    position: relative;
+}
+
+.messages .message .text_wrapper::after,
+.messages .message .text_wrapper:before {
+    top: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.messages .message .text_wrapper::after {
+    border-width: 13px;
+    margin-top: 0px;
+}
+
+.messages .message .text_wrapper::before {
+    border-width: 15px;
+    margin-top: -2px;
+}
+
+.messages .message .text_wrapper .text {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.bottom_wrapper {
+    display: flex;
+    padding: 20px;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 95%;
+    margin: auto;
+}
+
+.bottom_wrapper .message_input_wrapper {
+    display: inline-block;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #bcbdc0;
+    width: calc(100% - 160px);
+    position: relative;
+    padding: 0 20px;
+}
+
+.bottom_wrapper .message_input_wrapper .message_input {
+    border: none;
+    height: 100%;
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    position: absolute;
+    outline-width: 0;
+    color: gray;
+}
+
+.bottom_wrapper .send_message {
+    width: 140px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #a3d063;
+    border: 2px solid #a3d063;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+}
+
+.bottom_wrapper .send_message:hover {
+    color: #a3d063;
+    background-color: #fff;
+}
+
+.bottom_wrapper .send_message .text {
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    line-height: 48px;
+}
+
+.message_template {
+    display: none;
+}

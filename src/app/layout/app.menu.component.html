@@ -1,0 +1,11 @@
+<ul class="layout-menu">
+    <ng-container *ngFor="let item of model; let i = index;">
+        <li app-menuitem *ngIf="!item.separator" [item]="item" [index]="i" [root]="true"></li>
+        <li *ngIf="item.separator" class="menu-separator"></li>
+    </ng-container>
+    <li>
+        <a href="#">
+            <img  width="200" height="100" class="mt-5" src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.png" alt="logo">
+        </a>
+    </li>
+</ul>

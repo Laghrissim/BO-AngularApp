@@ -1,0 +1,74 @@
+<div class="card flex justify-content-center cm-breadcrumb">
+    <p-breadcrumb class="max-w-full" [model]="items">
+        <ng-template pTemplate="item" let-item>
+            <ng-container *ngIf="item.route; else elseBlock">
+                <a [routerLink]="item.route" class="p-menuitem-link">
+                    <span
+                        [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+                    ></span>
+                    <span class="text-primary font-semibold">{{
+                        item.label
+                    }}</span>
+                </a>
+            </ng-container>
+            <ng-template #elseBlock>
+                <a [href]="item.url">
+                    <span class="text-color">{{ item.label }}</span>
+                </a>
+            </ng-template>
+        </ng-template>
+    </p-breadcrumb>
+</div>
+<div class="container">
+    <div class="chat_window">
+        <div class="top_menu">
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+            <div class="title" *ngIf="project">
+                {{ project.description }}
+            </div>
+        </div>
+        <ul class="messages" #messageContainer>
+            <li
+                class="message"
+                *ngFor="let message of messageList"
+                [ngClass]="{
+                    right: message.sender === user.username,
+                    left: message.sender !== user.username
+                }"
+            >
+                <div class="avatar">
+                    <img
+                        src="/assets/demo/images/profil.svg"
+                        class="rounded"
+                        alt="..."
+                    />
+                </div>
+                <div class="text_wrapper">
+                    <span style="font-weight: bold">{{ message.sender }}</span>
+                    <span *ngIf="message.sender === user.username">
+                        (Vous)
+                    </span>
+                    <div class="text">{{ message.content }}</div>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom_wrapper clearfix">
+            <div class="message_input_wrapper">
+                <input
+                    class="message_input"
+                    placeholder="Message..."
+                    [(ngModel)]="newMessage"
+                    (keyup.enter)="sendMessage(newMessage)"
+                />
+            </div>
+            <div class="send_message" (click)="sendMessage(newMessage)">
+                <div class="icon"></div>
+                <div class="text">Send</div>
+            </div>
+        </div>
+    </div>
+</div>

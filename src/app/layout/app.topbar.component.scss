@@ -1,0 +1,17 @@
+.layout-topbar .layout-topbar-logo {
+    display: flex;
+    align-items: center;
+    /* color: var(--surface-900); */
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 300px;
+    border-radius: 12px;
+    justify-content: center;
+    /* padding-left: 7rem; */
+    height: 100%;
+    /* text-align: center; */
+}
+
+.layout-topbar .layout-topbar-logo img {
+    height: 45%;
+}
